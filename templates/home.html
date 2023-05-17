@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Добро пожаловать на главную страницу!</h1>
+    <p>Вы вошли в систему как {{ user.username }}.</p>
+    <p>Здесь вы можете найти все доступные функции приложения.</p>
+{% endblock %}
+</body>
+</html>

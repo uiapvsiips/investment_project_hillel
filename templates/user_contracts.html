@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Контракты</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Контракты</h1>
+    {% for user_contract in user_contracts %}
+        <p>current_profit: {{ user_contract.current_profit }}</p>
+        <p>complete_percent: {{ user_contract.complete_percent }}</p>
+        <p>days_from_start: {{ user_contract.days_from_start }}</p>
+        <p>deposit_amount: {{ user_contract.deposit_amount }}</p>
+        <p>creation_date: {{ user_contract.creation_date }}</p>
+        <p>status: {{ user_contract.status }}</p>
+    {% endfor %}
+    <a href="new/" class="button">Новый контракт</a>
+    <form method="post">
+        {% csrf_token %}
+
+    </form>
+{% endblock %}
+</body>
+</html>
